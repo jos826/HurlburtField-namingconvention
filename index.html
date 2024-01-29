@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hurlburt Field AFB Naming Convention</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #3273dc;
+    }
+
+    #logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    #result-box {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #3273dc;
+    }
+
+    table {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #generateBtn, #helpBtn {
+      margin-top: 20px;
+    }
+
+    #finalName {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #3273dc;
+    }
+
+    #helpModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      text-align: left;
+      z-index: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="title">Hurlburt Field AFB Naming Convention</div>
+
+  <img id="logo" src="https://media.defense.gov/2008/Jan/23/2000410635/2000/2000/0/080123-F-JZ500-049.JPG" alt="1 SOCS USAF Logo">
+
+  <div id="result-box" class="box"></div>
+  <div id="finalName" class="box"></div>
+
+  <form id="valueForm" class="box">
+    <div class="field">
+      <label class="label" for="computerType">Computer Type:</label>
+      <div class="control">
+        <div class="select">
+          <select id="computerType" required>
+            <option value="Workstation">Workstation</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Tablet">Tablet</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="squadron">Squadron:</label>
+      <div class="control">
+        <div class="select">
+          <select id="squadron" required>
+            <!-- Options from the provided list -->
+             <option value="FTEVX-XXXXXSN">FTEVX-XXXXXSN</option>
+<option value="FTEVX-AMXS">FTEVX-AMXS</option>
+<option value="FTEVX-AOS">FTEVX-AOS</option>
+<option value="FTEVX-CES">FTEVX-CES</option>
+<option value="FTEVX-CONS">FTEVX-CONS</option>
+<option value="FTEVX-CPTS">FTEVX-CPTS</option>
+<option value="FTEVX-CS">FTEVX-CS</option>
+<option value="FTEVX-FSS">FTEVX-FSS</option>
+<option value="FTEVX-SOG">FTEVX-SOG</option>
+<option value="FTEVX-SOLRS">FTEVX-SOLRS</option>
+<option value="FTEVX-SOMDG">FTEVX-SOMDG</option>
+<option value="FTEVX-SOMOS">FTEVX-SOMOS</option>
+<option value="FTEVX-SOMSG">FTEVX-SOMSG</option>
+<option value="FTEVX-MUNS">FTEVX-MUNS</option>
+<option value="FTEVX-SOMXG">FTEVX-SOMXG</option>
+<option value="FTEVX-SOMXS">FTEVX-SOMXS</option>
+<option value="FTEVX-SOSFS">FTEVX-SOSFS</option>
+<option value="FTEVX-SOSS">FTEVX-SOSS</option>
+<option value="FTEVX-TAOS">FTEVX-TAOS</option>
+<option value="FTEVX-SOW">FTEVX-SOW</option>
+<option value="FTEVX-11IS">FTEVX-11IS</option>
+<option value="FTEVX-14WPS">FTEVX-14WPS</option>
+<option value="FTEVX-15SOS">FTEVX-15SOS</option>
+<option value="FTEVX-16SOS">FTEVX-16SOS</option>
+<option value="FTEVX-17SOS">FTEVX-17SOS</option>
+<option value="FTEVX-SOTES">FTEVX-SOTES</option>
+<option value="FTEVX-19SOS">FTEVX-19SOS</option>
+<option value="FTEVX-2CWSS">FTEVX-2CWSS</option>
+<option value="FTEVX-2SOS">FTEVX-2SOS</option>
+<option value="FTEVX-20SOS">FTEVX-20SOS</option>
+<option value="FTEVX-23OWS">FTEVX-23OWS</option>
+<option value="FTEVX-23STS">FTEVX-23STS</option>
+<option value="FTEVX-24SOW">FTEVX-24SOW</option>
+<option value="FTEVX-25IS">FTEVX-25IS</option>
+<option value="FTEVX-26STS">FTEVX-26STS</option>
+<option value="FTEVX-27AMX">FTEVX-27AMX</option>
+<option value="FTEVX-27SOG">FTEVX-27SOG</option>
+<option value="FTEVX-27SFS">FTEVX-27SFS</option>
+<option value="FTEVX-27OSS">FTEVX-27OSS</option>
+<option value="FTEVX-27SOW">FTEVX-27SOW</option>
+<option value="FTEVX-28IS">FTEVX-28IS</option>
+<option value="FTEVX-3SOS">FTEVX-3SOS</option>
+<option value="FTEVX-310OS">FTEVX-310OS</option>
+<option value="FTEVX-311IS">FTEVX-311IS</option>
+<option value="FTEVX-318OS">FTEVX-318OS</option>
+<option value="FTEVX-319OS">FTEVX-319OS</option>
+<option value="FTEVX-33COS">FTEVX-33COS</option>
+<option value="FTEVX-33SOS">FTEVX-33SOS</option>
+<option value="FTEVX-34SOS">FTEVX-34SOS</option>
+<option value="FTEVX-ISRG">FTEVX-ISRG</option>
+<option value="FTEVX-SOCTS">FTEVX-SOCTS</option>
+<option value="FTEVX-373TS">FTEVX-373TS</option>
+<option value="FTEVX-39IOS">FTEVX-39IOS</option>
+<option value="FTEVX-4SOS">FTEVX-4SOS</option>
+<option value="FTEVX-412MX">FTEVX-412MX</option>
+<option value="FTEVX-413FL">FTEVX-413FL</option>
+<option value="FTEVX-43IS">FTEVX-43IS</option>
+<option value="FTEVX-435TS">FTEVX-435TS</option>
+<option value="FTEVX-SOACS">FTEVX-SOACS</option>
+<option value="FTEVX-492OG">FTEVX-492OG</option>
+<option value="FTEVX-SOTRG">FTEVX-SOTRG</option>
+<option value="FTEVX-TRSS">FTEVX-TRSS</option>
+<option value="FTEVX-492OW">FTEVX-492OW</option>
+<option value="FTEVX-5SOS">FTEVX-5SOS</option>
+<option value="FTEVX-505CC">FTEVX-505CC</option>
+<option value="FTEVX-505CS">FTEVX-505CS</option>
+<option value="FTEVX-50CTS">FTEVX-50CTS</option>
+<option value="FTEVX-50TS">FTEVX-50TS</option>
+<option value="FTEVX-50TG">FTEVX-50TG</option>
+<option value="FTEVX-55RHS">FTEVX-55RHS</option>
+<option value="FTEVX-605TE">FTEVX-605TE</option>
+<option value="FTEVX-65SOS">FTEVX-65SOS</option>
+<option value="FTEVX-705TR">FTEVX-705TR</option>
+<option value="FTEVX-717IO">FTEVX-717IO</option>
+<option value="FTEVX-720OS">FTEVX-720OS</option>
+<option value="FTEVX-720ST">FTEVX-720ST</option>
+<option value="FTEVX-727AM">FTEVX-727AM</option>
+<option value="FTEVX-73SOS">FTEVX-73SOS</option>
+<option value="FTEVX-765ES">FTEVX-765ES</option>
+<option value="FTEVX-765SC">FTEVX-765SC</option>
+<option value="FTEVX-8SOS">FTEVX-8SOS</option>
+<option value="FTEVX-801AM">FTEVX-801AM</option>
+<option value="FTEVX-823RH">FTEVX-823RH</option>
+<option value="FTEVX-9SOS">FTEVX-9SOS</option>
+<option value="FTEVX-901AM">FTEVX-901AM</option>
+<option value="FTEVX-926OG">FTEVX-926OG</option>
+<option value="FTEVX-ADC">FTEVX-ADC</option>
+<option value="FTEVX-AFICA">FTEVX-AFICA</option>
+<option value="FTEVX-AFIMS">FTEVX-AFIMS</option>
+<option value="FTEVX-AFLCM">FTEVX-AFLCM</option>
+<option value="FTEVX-AFOSI">FTEVX-AFOSI</option>
+<option value="FTEVX-AFOTE">FTEVX-AFOTE</option>
+<option value="FTEVX-AFRC">FTEVX-AFRC</option>
+<option value="FTEVX-AFSOC">FTEVX-AFSOC</option>
+<option value="FTEVX-A1">FTEVX-A1</option>
+<option value="FTEVX-A2">FTEVX-A2</option>
+<option value="FTEVX-A3">FTEVX-A3</option>
+<option value="FTEVX-A4">FTEVX-A4</option>
+<option value="FTEVX-A5A8">FTEVX-A5A8</option>
+<option value="FTEVX-A589">FTEVX-A589</option>
+<option value="FTEVX-A6">FTEVX-A6</option>
+<option value="FTEVX-A7">FTEVX-A7</option>
+<option value="FTEVX-FM">FTEVX-FM</option>
+<option value="FTEVX-GSU">FTEVX-GSU</option>
+<option value="FTEVX-HC">FTEVX-HC</option>
+<option value="FTEVX-HO">FTEVX-HO</option>
+<option value="FTEVX-IG">FTEVX-IG</option>
+<option value="FTEVX-IP">FTEVX-IP</option>
+<option value="FTEVX-JA">FTEVX-JA</option>
+<option value="FTEVX-JSOU">FTEVX-JSOU</option>
+<option value="FTEVX-OC">FTEVX-OC</option>
+<option value="FTEVX-PA">FTEVX-PA</option>
+<option value="FTEVX-SE">FTEVX-SE</option>
+<option value="FTEVX-SG">FTEVX-SG</option>
+<option value="FTEVX-SOACS">FTEVX-SOACS</option>
+<option value="FTEVX-SOJ2">FTEVX-SOJ2</option>
+            <!-- Add the rest of the options from your provided list -->
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="serial">Serial:</label>
+      <div class="control">
+        <input class="input" type="text" id="serial" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="manufacturerModel">Manufacturer/Model:</label>
+      <div class="control">
+        <div class="select">
+          <select id="manufacturerModel" required>
+            <option value="Dell">Dell</option>
+            <option value="Microsoft Surface Pro">Microsoft Surface Pro</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <button class="button is-primary" id="generateBtn" onclick="generateTable()">Generate Table</button>
+  <button class="button is-info" id="helpBtn">Help</button>
+
+  <div id="helpModal">
+    <span class="modal-close" onclick="closeHelpModal()">&times;</span>
+    <p>
+      Welcome to the Hurlburt Field AFB Naming Convention website!<br>
+      To use this website, follow these steps:
+    </p>
+    <ul>
+      <li>Choose the computer type (Workstation, Laptop, or Tablet) from the dropdown.</li>
+      <li>Select the squadron from the provided options.</li>
+      <li>Enter the serial number in the designated input field.</li>
+      <li>Choose the Manufacturer/Model from the dropdown.</li>
+      <li>Click on the "Generate Table" button to see the output in the table.</li>
+      <li>The "Name:" section below the table will display the generated name based on the input.</li>
+    </ul>
+    <p>
+      For any assistance or requests for changes, contact SrA Placencia, Jose at 884-9722.
+    </p>
+    <p>
+      The name is split up into 4 parts:
+      <ul>
+        <li><b>Identifier:</b> For Hurlburt Field, this is FTEV</li>
+        <li><b>Computer Type:</b> W, L, or T for workstation, laptop, or tablet</li>
+        <li><b>Squadron:</b> An abbreviated version of the squadron the computer belongs to</li>
+        <li><b>Serial:</b> The remaining spaces are filled with the beginning or end of the serial, based on what side is unique</li>
+      </ul>
+    </p>
+  </div>
+
+  <script>
+    function generateTable() {
+      var computerType = document.getElementById("computerType").value;
+      var squadron = document.getElementById("squadron").value;
+      var serial = document.getElementById("serial").value;
+      var manufacturerModel = document.getElementById("manufacturerModel").value;
+
+      var serialNumbers = serial.replace(/\s/g, '').split(',');
+
+      var tableHTML = '<table><tr><th>Computer Type</th><th>Squadron</th><th>Serial</th><th>Manufacturer/Model</th><th>Combined Output</th></tr>';
+
+      serialNumbers.forEach(function (singleSerial) {
+        var computerTypeOutput = "";
+        switch (computerType) {
+          case "Workstation":
+            computerTypeOutput = "W";
+            break;
+          case "Laptop":
+            computerTypeOutput = "L";
+            break;
+          case "Tablet":
+            computerTypeOutput = "T";
+            break;
+          default:
+            computerTypeOutput = "";
+        }
+
+        var updatedSquadron = squadron.replace("X", computerTypeOutput);
+
+        var manufacturerModelOutput = "";
+        switch (manufacturerModel) {
+          case "Dell":
+            manufacturerModelOutput = singleSerial.substring(0, 5);
+            break;
+          case "Microsoft Surface Pro":
+            manufacturerModelOutput = singleSerial.substring(4, 10);
+            break;
+          case "Other":
+            var minChars = Math.min(singleSerial.length, 5);
+            manufacturerModelOutput = singleSerial.substring(singleSerial.length - minChars);
+            break;
+          default:
+            manufacturerModelOutput = "";
+        }
+
+        var combinedValues = updatedSquadron + manufacturerModelOutput;
+        combinedValues = combinedValues.substring(0, 15);
+
+        tableHTML += '<tr><td>' + computerType + '</td><td>' + squadron + '</td><td>' + singleSerial + '</td><td>' + manufacturerModel + '</td><td>' + combinedValues + '</td></tr>';
+      });
+
+      tableHTML += '</table>';
+      document.getElementById("result-box").innerHTML = tableHTML;
+
+      var finalName = `Name: ${updatedSquadron}${computerTypeOutput}-${squadron}${manufacturerModelOutput}`;
+      document.getElementById("finalName").innerHTML = finalName.toUpperCase();
+    }
+
+    function closeHelpModal() {
+      document.getElementById("helpModal").style.display = "none";
+    }
+
+    document.getElementById("helpBtn").addEventListener("click", function() {
+      document.getElementById("helpModal").style.display = "block";
+    });
+
+    // Close the help modal if the user clicks outside the modal
+    window.addEventListener("click", function(event) {
+      if (event.target === document.getElementById("helpModal")) {
+        closeHelpModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
